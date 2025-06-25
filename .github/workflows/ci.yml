@@ -16,6 +16,7 @@ env:
 jobs:
   versions:
     name: Export Versions
+    runs-on: ubuntu-22.04
     outputs:
       elixir: ${{steps.elixir.outputs.value }}
       otp: ${{ steps.otp.outputs.value }}
@@ -30,6 +31,7 @@ jobs:
 
   pre_build:
     name: Pre Build
+    runs-on: ubuntu-22.04
     needs: [versions]
     steps:
       - name: Checkout Github repo
